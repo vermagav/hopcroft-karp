@@ -90,7 +90,7 @@ bool HopcroftKarp::dfs(int left) {
                 if(dfs(matching[right])) {
                     matching[left] = right;
                     matching[right] = left;
-                    //std::cout<<"\nFound Matching; left: "<<left<<", right: "<<right;
+                    std::cout<<"\n\tFound Matching; left: "<<left<<", right: "<<right;
                     return true;
                 }
             }
@@ -108,9 +108,9 @@ void HopcroftKarp::output_matching(int num_matching) {
 
 void HopcroftKarp::run() {
     // Input data to form bipartite graph
-    input_data();
-    //input_data_test();
-    
+    //input_data();
+    input_data_test();
+
     // Run the algorithm to count max matching
     int num_matching;
     while(bfs()) {
